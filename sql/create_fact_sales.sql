@@ -1,17 +1,17 @@
-CREATE OR REPLACE TABLE `retail-pulse-496303.raw_data.fact_sales` AS
+CREATE OR REPLACE TABLE retail_pulse.fact_sales AS
 SELECT
-    GENERATE_UUID() AS order_id,
-
-    TIMESTAMP(Order_Date) AS order_date,
-
-    Customer_Name AS customer_name,
-
-    Product_ID AS product_id,
-
-    CAST(Sales AS INT64) AS sales,
-
-    CAST(Profit AS FLOAT64) AS profit,
-
-    CAST(Quantity AS INT64) AS quantity
-
-FROM `retail-pulse-496303.raw_data.superstore`;
+  s.Order_ID,
+  CAST(FORMAT_DATE('%Y%m%d', PARSE_DATE('%m/%d/%Y', s.Order_Date)) AS INT64) AS date_key,
+  p.product_key,
+  c.customer_key,
+  st.store_key,
+  s.Sales AS revenue,
+  s.Profit AS profit,
+  s.Quantity AS units_sold,
+  s.Discount AS discount_pct,
+  ROUND(s.Profit / NULLIF(s.Sales, 0) * 100, 2) AS profit_margin_pct
+FROM raw_data.superstore s
+LEFT JOIN retail_pulse.dim_product p USING (Product_ID)
+LEFT JOIN retail_pulse.dim_customer c USING (Customer_ID)
+LEFT JOIN retail_pulse.dim_store st USING (State)
+LEFT JOIN retail_pulse.dim_date d ON d.full_date = PARSE_DATE('%m/%d/%Y', s.Order_Date);
