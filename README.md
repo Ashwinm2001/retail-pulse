@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src=""C:\Users\ashwi\retail-pulse\dashboard_images\retail_pulse.png"" alt="Retail Pulse Dashboard Preview" width="100%" style="border-radius:8px;" />
-
 <br/><br/>
 
 # 🏪 Retail Pulse
