@@ -479,7 +479,7 @@ Contributions, suggestions, and issue reports are welcome.
 <!-- 🔧 Add your real links -->
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/ashwinm2001/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github)](https://github.com/Ashwinm2001)
-[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=flat-square&logo=gmail&logoColor=white)](ashwin2001hitech@gmail.com)
+[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:ashwin2001hitech@gmail.com)
 
 ---
 
